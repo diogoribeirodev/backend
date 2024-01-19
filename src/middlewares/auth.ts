@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { CertifyAccessToken } from "@/utils/authenticate";
+import { CertifyAccessToken } from "../utils/authenticate";
 
 export const authMiddleware: RequestHandler = async (req, res, next) => {
   const accessToken = req.headers["authorization"]; // req.headers['x-access-token'];

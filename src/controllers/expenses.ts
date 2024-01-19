@@ -1,5 +1,5 @@
-import { db } from "@/server/db";
-import { insertExpenseParams, updateExpenseParams } from "@/server/db/schema/expense";
+import { db } from "../server/db";
+import { insertExpenseParams } from "../server/db/schema/expense";
 import { RequestHandler } from "express"
 
 export const getExpenses: RequestHandler = async (req, res, next) => {

@@ -11,9 +11,7 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "@/*": [ "./src/*"],
-      "*": ["node_modules/*", "src/types/*"]
-
+      "*": ["node_modules/*", "src/types/*"],
     },
   },
   "include": ["./src/**/*"],

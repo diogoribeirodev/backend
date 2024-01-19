@@ -1,8 +1,8 @@
 import bycrypt from "bcryptjs";
 import { RequestHandler } from "express";
-import { db } from "@/server/db";
-import { SignInSchema, SignUpSchema } from "@/server/db/schema";
-import { GenerateAccessToken } from "@/utils/authenticate";
+import { db } from "../server/db";
+import { SignInSchema, SignUpSchema } from "../server/db/schema";
+import { GenerateAccessToken } from "../utils/authenticate";
 
 export const signUpUser: RequestHandler = async (req, res, next) => {
   try {
