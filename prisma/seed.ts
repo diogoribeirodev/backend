@@ -79,18 +79,22 @@ const userExpenseData: Prisma.ExpenseCreateManyInput[] = Array.from(
     amount: Number(faker.finance.amount({ min: 10, max: 1000, dec: 0 })),
     paid: faker.helpers.maybe(faker.datatype.boolean, { probability: 0.4 }),
     paymentMethod: faker.helpers.maybe(
-      () =>
-        faker.helpers.arrayElement(["CARD","CASH","TRANSFER","OTHER"]),
+      () => faker.helpers.arrayElement(["CARD", "CASH", "TRANSFER", "OTHER"]),
       { probability: 0.4 },
     ),
     note: faker.helpers.maybe(faker.lorem.sentence, { probability: 0.4 }),
     date: faker.helpers.maybe(faker.date.recent, { probability: 0.4 }),
     category: faker.helpers.maybe(
       () =>
-        faker.helpers.arrayElement(["FOOD","TRANSPORT","ENTERTAINMENT","OTHER"]),
+        faker.helpers.arrayElement([
+          "FOOD",
+          "TRANSPORT",
+          "ENTERTAINMENT",
+          "OTHER",
+        ]),
       { probability: 0.4 },
     ),
-    userId : faker.helpers.arrayElement([1, 2, 3]),
+    userId: faker.helpers.arrayElement([1, 2, 3]),
   }),
 );
 async function main() {

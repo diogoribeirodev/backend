@@ -4,7 +4,7 @@ import {
   getExpenses,
   createExpense,
   deleteExpense,
-  updateExpense
+  updateExpense,
 } from "../controllers/expenses";
 import { authMiddleware } from "../middlewares/auth";
 

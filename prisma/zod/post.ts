@@ -1,5 +1,5 @@
-import * as z from "zod"
-import { CompleteUser, relatedUserSchema } from "./index"
+import * as z from "zod";
+import { CompleteUser, relatedUserSchema } from "./index";
 
 export const postSchema = z.object({
   id: z.number().int(),
@@ -10,10 +10,10 @@ export const postSchema = z.object({
   published: z.boolean(),
   viewCount: z.number().int(),
   authorId: z.number().int().nullish(),
-})
+});
 
 export interface CompletePost extends z.infer<typeof postSchema> {
-  author?: CompleteUser | null
+  author?: CompleteUser | null;
 }
 
 /**
@@ -21,6 +21,8 @@ export interface CompletePost extends z.infer<typeof postSchema> {
  *
  * NOTE: Lazy required in case of potential circular dependencies within schema
  */
-export const relatedPostSchema: z.ZodSchema<CompletePost> = z.lazy(() => postSchema.extend({
-  author: relatedUserSchema.nullish(),
-}))
+export const relatedPostSchema: z.ZodSchema<CompletePost> = z.lazy(() =>
+  postSchema.extend({
+    author: relatedUserSchema.nullish(),
+  }),
+);
